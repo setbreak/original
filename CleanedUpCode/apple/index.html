@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <title>Setbreak Today</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="Images/WebClipIcon.png">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="Parts/Transitions.css">
+    <link rel="stylesheet" type="text/css" href="Parts/ActivityIndicator.css">
+    <script src="http://broadcast.oreilly.com/upload/2009/04/AC_QuickTime.js" language="JavaScript" type="text/javascript"></script>
+    <script type="text/javascript" src="Parts/utilities.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/setup.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/Text.js" charset="utf-8"></script>
+    <script type="text/javascript" src="attributes.js" charset="utf-8"></script>
+    <script type="text/javascript" src="RSSSupport.js" charset="utf-8"></script>
+    <script type="text/javascript" src="main.js" charset="utf-8"></script>
+    <script type="text/javascript" src="showfunctions.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/Transitions.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/StackLayout.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/List.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/PushButton.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/ButtonHandler.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/ActivityIndicator.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/Indicator.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/LevelIndicator.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/HorizontalLevelIndicator.js" charset="utf-8"></script>
+</head>
+<body onload="load();">
+    <div id="content">
+        <div id="header">
+            <div id="headerGradient">
+                <div id="checkboxbuttonSort">
+                    <input type="checkbox" name="" checked="checked" id="checkboxbutton1" value="" disabled="disabled">
+                    <div id="text"></div>
+                </div>
+            </div>
+            <div id="horizontalLevelIndicator"></div>
+            <div id="feedName"></div>
+            <div id="todaysDate"></div>
+            <div id="topSplitter1"></div>
+            <div id="indicator"></div>
+            <input type="search" value="" placeholder="Click Here To Search" results="10" id="searchfield" name="searchfield" incremental="incremental">
+            <div id="topSplitter2"></div>
+            <div id="showInfoButton"></div>
+            <div id="showInfoButton4"></div>
+            <div id="showInfoButton3" checked="checked"></div>
+            <div id="showInfoButton1" checked="checked"></div>
+            <div id="showInfoButton2" checked="checked"></div>
+            <div id="button2" checked="checked"></div>
+            <div id="button1" checked="checked"></div>
+        </div>
+        <div id="StackLayout">
+            <div id="progressLoad">
+                <img src="Images/ActivityIndicator.png" id="activityIndicator" style="-webkit-animation-name: dashcode-activity-indicator; -webkit-animation-duration: 1s; -webkit-animation-iteration-count: infinite; -webkit-animation-timing-function: linear; ">
+            </div><div id="infoView">
+                <div id="button"></div>
+            </div><div id="frontPage">
+                <ul id="headlineList">
+                    <li id="listRowTemplate" class="listRowTemplate_template">
+                        <div id="headlineTitle" class="label_template">Band</div>
+                        <div id="arrow" class="arrow_template"></div>
+                        <div class="text2_templateShow" id="headlineDescription"></div>
+                        <div id="headlineSplitter" class="box1_template"></div>
+                        <div class="headlineSrc_template" id="headlineSrc"></div>
+                        <div class="headlineVenue_templateShow" id="headlineVenue"></div>
+                        <div class="headlineImg_template" id="headlineImg"></div>
+                    </li>
+                </ul>
+                <div id="olderArticlesLabel"></div>
+                <div id="bodySplitter"></div>
+                <ul id="secondHeadlines">
+                    <li id="listRowTemplate1" class="listRowTemplate1_template">
+                        <div id="secondHeadlineTitle" class="label1_template">Article Title</div>
+                        <div id="arrow1" class="arrow1_template"></div>
+                        <div id="secondHeadlineSplitter" class="box_template"></div>
+                    </li>
+                </ul>
+            </div>
+            <div id="showPage">
+                <div id="articleTitle" onclick="showsbyartist(event)"></div>
+                <div id="articleBand"></div>
+                <div id="articleSrc"></div>
+                <div id="articleDate"></div>
+                <div id="articleBottomSplitter"></div>
+                <div id="navigation">
+                    <div id="readMoreTop1"></div>
+                    <div id="backToHeadlinesTop1" checked="checked"></div>
+                    <div id="backToSongsTop" checked="checked"></div>
+                </div>
+                <div id="articleBottomSplitter1"></div>
+                <div id="stackLayout"><div id="songProgressLoad">
+                        <img src="Images/ActivityIndicator.png" id="activityIndicator1" style="-webkit-animation-name: dashcode-activity-indicator; -webkit-animation-duration: 1s; -webkit-animation-iteration-count: infinite; -webkit-animation-timing-function: linear; ">
+                    </div><div id="songListView">
+                        <ul id="songList">
+                            <li id="listRowTemplate2" class="listRowTemplate_templateSong">
+                                <div id="songTitle" class="songTitle2_templateSong">Song Title</div>
+                                <div id="songTitle2" class="label_template2Song">Song Title</div>
+                                <div id="arrow2" class="arrow_templateSong"></div>
+                                <div class="text2_templateSong" id="songDescription"></div>
+                                <div id="songSplitter" class="box1_template"></div>
+                                <div class="headlineSrc_templateSong" id="songSrc"></div>
+                                <div class="headlineVenue_templateSong" id="songVenue"></div>
+                            </li>
+                        </ul>
+                    </div><div id="songLyricsView" style="display: block; ">
+                        <div id="songLyrics2"></div>
+                        <div id="songTitle3" class="songTitle2_templateSongLyrics">Song Title</div>
+                        <div id="songLyrics"></div>
+                        <div class="text2_templateSongLyrics" id="songDescription2" style=""></div>
+                    </div><div id="songView">
+                        <div id="JerButton"></div>
+                        <div id="newboxJer">
+                        </div>
+                        <div id="newTextJer"></div>
+                        <div id="boxJer"></div>
+                        <div id="infoButton" checked="checked"></div>
+                        <div id="roundedRectangleShape" onclick="makeqtvjer(event)">
+                        </div>
+                        <div id="box4">
+                            <div id="textShow2"></div>
+                        </div>
+                    </div><div id="showView">
+                        <div id="articleBox">
+                            <div id="articleDescription"></div>
+                            <div id="articleSetlist"></div>
+                            <div id="articleLineage"></div>
+                            <div id="articleNotes"></div>
+                        </div>
+                        <div id="articleImage"></div>
+                    </div></div>
+            </div><div id="articlePage1" style="display: block; ">
+                <div id="articleTitle1"></div>
+                <div id="articleSrc1"></div>
+                <div id="articleBand1"></div>
+                <div id="articleBox1">
+                    <div id="articleImage1"></div>
+                    <div id="articleDescription1"></div>
+                    <div id="articleSetlist1"></div>
+                    <div id="articleLineage1"></div>
+                    <div id="articleNotes1"></div>
+                </div>
+                <div id="navigation1">
+                    <div id="readMore1"></div>
+                    <div id="backToHeadlines1" checked="checked"></div>
+                </div>
+                <div id="articleBottomSplitter2"></div>
+                <div id="articleDate1"></div>
+                <div id="articleBottomSplitter3"></div>
+                <div id="backToHeadlinesTop2" checked="checked"></div>
+                <ul id="songList1">
+                    <li id="listRowTemplate3" class="listRowTemplate_template">
+                        <div id="songTitle1" class="label_template">Song Title</div>
+                        <div id="arrow3" class="arrow_template"></div>
+                        <div class="text2_template" id="songDescription1"></div>
+                        <div id="songSplitter1" class="box1_template"></div>
+                        <div class="headlineSrc_template" id="songSrc1"></div>
+                        <div class="headlineVenue_template" id="songVenue1"></div>
+                    </li>
+                </ul>
+                <div id="box1">
+                    <div id="textShow1"></div>
+                </div>
+                <div id="readMoreTop2"></div>
+            </div>
+            <div id="searchView">
+                <ul id="searchList">
+                    <li id="listRowTemplate5" class="listRowTemplate5_template" style="border-top-width: 0px; ">
+                        <div id="label" class="label3_template"></div>
+                        <div id="arrow5" class="arrow5_template">
+                        </div>
+                        <div id="yearsearch" class="label11_template"></div>
+                    </li>
+                </ul>
+            </div><div id="searchView1" style="display: block; ">
+                <ul id="searchList1">
+                    <li id="listRowTemplate4" class="listRowTemplate5_template" style="border-top-width: 0px; ">
+                        <div id="label1" class="label3_template"></div>
+                        <div id="arrow4" class="arrow5_template">
+                        </div>
+                        <div id="yearsearch1" class="label11_template"></div>
+                    </li>
+                </ul>
+            </div></div>
+    </div>
+    <div id="footer"></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-680413-6");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
